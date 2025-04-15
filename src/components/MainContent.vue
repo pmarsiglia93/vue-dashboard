@@ -142,18 +142,21 @@ export default {
   flex-direction: column;
   background-color: var(--bg-color);
   height: auto;
+  overflow-x: auto;
 }
 
 .top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .entries-filter label {
   font-size: 14px;
   color: var(--text-color);
+  white-space: nowrap;
 }
 
 .entries-filter select {
@@ -172,6 +175,7 @@ export default {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
 }
 
 .top-bar button:hover {

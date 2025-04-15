@@ -37,7 +37,7 @@
             </span>
           </td>
           <td class="action-cell">
-            <!-- Edit Icon -->
+            <!-- Edit -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="action-icon"
@@ -53,7 +53,7 @@
               <path d="M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z" />
             </svg>
 
-            <!-- Delete Icon -->
+            <!-- Delete -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="action-icon"
@@ -82,6 +82,7 @@
       >
         Previous
       </button>
+
       <button
         v-for="page in totalPages"
         :key="page"
@@ -90,6 +91,7 @@
       >
         {{ page }}
       </button>
+
       <button
         :disabled="currentPage === totalPages"
         @click="changePage(currentPage + 1)"
@@ -147,7 +149,9 @@ export default {
       }
     },
     changePage(page) {
-      this.currentPage = page;
+      if (page >= 1 && page <= this.totalPages) {
+        this.currentPage = page;
+      }
     },
   },
   created() {
@@ -170,8 +174,9 @@ export default {
   background-color: var(--bg-color);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  height: auto; /* IMPORTANTE: evita forçar espaço */
+  height: auto;
 }
+
 .product-cell {
   display: flex;
   align-items: center;
@@ -207,6 +212,7 @@ export default {
 
 table {
   width: 100%;
+  min-width: 700px;
   border-collapse: collapse;
   background-color: var(--header-bg);
   border-radius: 8px;
@@ -273,5 +279,15 @@ tr:nth-child(odd) {
 
 .action-icon:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    padding: 10px 0;
+  }
+
+  table {
+    border-radius: 0;
+  }
 }
 </style>

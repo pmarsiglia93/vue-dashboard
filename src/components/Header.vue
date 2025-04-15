@@ -1,15 +1,27 @@
 <template>
   <header class="header">
+    <!-- Menu Hamburguer (visível apenas no mobile) -->
+    <button
+      class="menu-toggle"
+      @click="$emit('toggle-sidebar')"
+      aria-label="Toggle Menu"
+    >
+      ☰
+    </button>
+
+    <!-- Logo -->
     <div class="logo">
       <div class="logo-icon"></div>
       <span>ClarityUI</span>
     </div>
 
+    <!-- Campo de busca -->
     <div class="search-container">
       <span class="icon">🔍</span>
       <input type="text" placeholder="Type to search" class="search-input" />
     </div>
 
+    <!-- Ícones do topo -->
     <div class="header-icons">
       <div class="icon-wrapper">
         <!-- Envelope Icon -->
@@ -26,9 +38,9 @@
           <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
           <polyline points="3,7 12,13 21,7" />
         </svg>
-
         <span class="badge">2</span>
       </div>
+
       <!-- Bell Icon -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,13 +56,14 @@
         <path d="M13.73 21a2 2 0 01-3.46 0" />
       </svg>
 
+      <!-- Avatar -->
       <img
         class="avatar"
         src="https://i.pravatar.cc/32?img=3"
         alt="User Avatar"
       />
 
-      <!-- Toggle Theme Button (dinâmico) -->
+      <!-- Botão de troca de tema -->
       <button
         class="toggle-btn"
         @click="$emit('toggle-dark')"
@@ -89,6 +102,19 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-family: "Montserrat", sans-serif;
   color: var(--text-color);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  margin-right: 16px;
+  cursor: pointer;
+  color: inherit;
 }
 
 .logo {
@@ -129,6 +155,7 @@ export default {
   display: flex;
   align-items: center;
   padding-left: 40px;
+  flex-shrink: 1;
 }
 
 .icon {
@@ -154,6 +181,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .icon-wrapper {
@@ -201,5 +229,23 @@ export default {
 
 .toggle-btn:hover {
   transform: scale(1.2);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .search-container,
+  .header-icons {
+    display: none;
+  }
+
+  .logo {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 </style>

@@ -25,6 +25,8 @@
   padding: 12px 24px;
   background: #fff;
   border-bottom: 1px solid #eee;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
@@ -47,7 +49,7 @@
 
 .search-box {
   flex: 1;
-  margin: 0 24px;
+  min-width: 240px;
 }
 
 .search-box input {
@@ -69,5 +71,21 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    order: 3;
+    width: 100%;
+  }
+
+  .header-icons {
+    justify-content: flex-end;
+  }
 }
 </style>
