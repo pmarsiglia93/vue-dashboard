@@ -53,6 +53,6 @@
 
 ## 👨‍💻 Autor
 
-Feito com 💜 por [**Paulo Francisco Marsiglia**](https://www.linkedin.com/in/paulo-marsiglia/)
+Feito com 💜 por [**Paulo Francisco Marsiglia**](https://www.linkedin.com/in/paulomarsiglia/)
 
 [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat&logo=github&logoColor=white)](https://github.com/pmarsiglia93)
