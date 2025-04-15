@@ -1,8 +1,6 @@
 <template>
   <div class="modal-overlay" @click.self="close">
     <div class="modal">
-      <h2>{{ isEdit ? "Edit Order" : "Add Order" }}</h2>
-
       <form @submit.prevent="submitForm">
         <label>Status:</label>
         <select v-model="form.status">
@@ -137,13 +135,6 @@ export default {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-h2 {
-  margin-bottom: 16px;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-color);
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -183,13 +174,21 @@ select {
 
 .modal-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
   margin-top: 24px;
 }
 
-.cancel-btn {
-  padding: 10px 16px;
+.cancel-btn,
+.apply-btn {
+  width: 264px;
+  height: 56px;
   border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.cancel-btn {
   background-color: #ffffff;
   border: 1px solid #ccc;
   color: #333;
@@ -197,12 +196,9 @@ select {
 }
 
 .apply-btn {
-  padding: 10px 16px;
-  border-radius: 8px;
   background-color: #6a5acd;
   color: white;
   border: none;
-  font-weight: bold;
   cursor: pointer;
 }
 </style>

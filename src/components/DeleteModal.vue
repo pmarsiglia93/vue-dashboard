@@ -4,7 +4,8 @@
       <div class="modal-icon">
         <span class="icon">!</span>
       </div>
-      <h2>Delete Order</h2>
+
+      <h2 class="modal-title">Delete Order</h2>
       <p class="question">
         <strong>Are you sure you want to delete this order?</strong>
       </p>
@@ -48,16 +49,17 @@ export default {
 }
 
 .modal {
-  background-color: #fff;
+  background-color: var(--header-bg);
   padding: 32px;
   border-radius: 12px;
-  width: 360px;
+  width: 400px;
   max-width: 90%;
-  text-align: center;
+  text-align: left;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .modal-icon {
-  margin: 0 auto 16px;
   background: #ffeaea;
   border-radius: 50%;
   width: 48px;
@@ -65,6 +67,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .icon {
@@ -73,38 +76,48 @@ export default {
   font-size: 20px;
 }
 
+.modal-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .question {
-  font-size: 16px;
+  font-size: 15px;
   margin: 12px 0 4px;
-  color: #333;
 }
 
 .info {
   font-size: 13px;
   color: #7d7d7d;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .actions {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cancel,
+.delete {
+  width: 156px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .cancel {
-  background: #f5f6f7;
-  color: #333;
-  padding: 10px 18px;
-  border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text-color);
   border: 1px solid #ccc;
-  cursor: pointer;
 }
 
 .delete {
   background: #e53935;
-  color: #fff;
-  padding: 10px 18px;
+  color: white;
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }
 </style>
