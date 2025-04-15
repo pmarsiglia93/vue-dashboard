@@ -25,6 +25,8 @@ body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  height: auto;
+  overflow-y: auto;
 }
 
 :root {

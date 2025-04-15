@@ -28,13 +28,7 @@ export default {
   methods: {
     toggleTheme() {
       this.isDarkMode = !this.isDarkMode;
-
-      // Aplica a classe no body para propagar os estilos globais
-      if (this.isDarkMode) {
-        document.body.classList.add("dark-mode");
-      } else {
-        document.body.classList.remove("dark-mode");
-      }
+      document.body.classList.toggle("dark-mode", this.isDarkMode);
     },
   },
 };
@@ -50,5 +44,6 @@ export default {
 .main-section {
   display: flex;
   flex: 1;
+  min-height: 0;
 }
 </style>

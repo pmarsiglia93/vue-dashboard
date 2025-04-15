@@ -51,7 +51,7 @@
           <i class="icon">⚙️</i>
           <span>Settings</span>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" @click="handleLogout">
           <i class="icon">🚪</i>
           <span>Logout</span>
         </li>
@@ -60,10 +60,20 @@
   </aside>
 </template>
 
+<script>
+export default {
+  methods: {
+    handleLogout() {
+      this.$router.replace("/login");
+    },
+  },
+};
+</script>
+
 <style scoped>
 .sidebar {
   width: 220px;
-  height: 100vh;
+  height: 85vh;
   background-color: var(--sidebar-bg, #f7f6fc);
   padding: 24px 0;
   display: flex;
@@ -77,6 +87,9 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-item {
@@ -130,5 +143,6 @@ ul {
 .bottom-section {
   margin-top: auto;
   padding-top: 24px;
+  border-top: 1px solid var(--border-color, #e0e0e0);
 }
 </style>

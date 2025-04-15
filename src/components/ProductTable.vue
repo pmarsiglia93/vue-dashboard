@@ -16,7 +16,17 @@
       <tbody>
         <tr v-for="product in paginatedProducts" :key="product.id">
           <td>{{ product.trackingId }}</td>
-          <td>{{ product.product }}</td>
+          <td class="product-cell">
+            <img
+              v-if="productImages[product.product]"
+              :src="
+                require(`@/assets/products/${productImages[product.product]}`)
+              "
+              alt="Product Icon"
+              class="product-icon"
+            />
+            {{ product.product }}
+          </td>
           <td>{{ product.customer }}</td>
           <td>{{ product.date }}</td>
           <td>${{ product.amount }}</td>
@@ -104,6 +114,18 @@ export default {
     return {
       products: [],
       currentPage: 1,
+      productImages: {
+        Hat: "hat.png",
+        Laptop: "laptop.png",
+        Phone: "phone.png",
+        Bag: "bag.png",
+        Headset: "headset.png",
+        Mouse: "mouse.png",
+        Clock: "clock.png",
+        "T-shirt": "t-shirt.png",
+        Monitor: "monitor.png",
+        Keyboard: "keyboard.png",
+      },
     };
   },
   computed: {
@@ -144,10 +166,23 @@ export default {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  padding: 16px;
+  padding: 10px;
   background-color: var(--bg-color);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  height: auto; /* IMPORTANTE: evita forçar espaço */
+}
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.product-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .pagination {

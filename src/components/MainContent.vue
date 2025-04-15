@@ -137,11 +137,11 @@ export default {
 <style scoped>
 .main-content {
   padding: 20px;
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color);
-  min-height: 100vh;
+  height: auto;
 }
 
 .top-bar {
