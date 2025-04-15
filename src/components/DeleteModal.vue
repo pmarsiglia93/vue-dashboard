@@ -87,7 +87,7 @@ export default {
 
 .actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .cancel {

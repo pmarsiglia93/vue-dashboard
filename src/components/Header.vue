@@ -12,23 +12,55 @@
 
     <div class="header-icons">
       <div class="icon-wrapper">
-        <img
-          src="https://img.icons8.com/?size=100&id=85022&format=png&color=000000"
-          alt="Envelope"
+        <!-- Envelope Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
           class="icon-img"
-        />
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="5" width="18" height="14" rx="2" ry="2" />
+          <polyline points="3,7 12,13 21,7" />
+        </svg>
+
         <span class="badge">2</span>
       </div>
-      <img
-        src="https://img.icons8.com/?size=100&id=82754&format=png&color=000000"
-        alt="Bell"
+      <!-- Bell Icon -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
         class="icon-img"
-      />
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+        <path d="M13.73 21a2 2 0 01-3.46 0" />
+      </svg>
+
       <img
         class="avatar"
         src="https://i.pravatar.cc/32?img=3"
         alt="User Avatar"
       />
+
+      <!-- Toggle Theme Button (dinâmico) -->
+      <button
+        class="toggle-btn"
+        @click="$emit('toggle-dark')"
+        :aria-label="
+          isDarkMode ? 'Alternar para modo claro' : 'Alternar para modo escuro'
+        "
+        :title="isDarkMode ? 'Modo Claro' : 'Modo Escuro'"
+      >
+        {{ isDarkMode ? "🌞" : "🌙" }}
+      </button>
     </div>
   </header>
 </template>
@@ -36,6 +68,12 @@
 <script>
 export default {
   name: "Header",
+  props: {
+    isDarkMode: {
+      type: Boolean,
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -47,9 +85,10 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
-  background-color: #fff;
+  background-color: var(--header-bg);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
 }
 
 .logo {
@@ -57,7 +96,7 @@ export default {
   align-items: center;
   font-weight: bold;
   font-size: 18px;
-  color: #000;
+  color: inherit;
 }
 
 .logo-icon {
@@ -80,13 +119,11 @@ export default {
   border-radius: 50%;
 }
 
-/* SEARCH BAR */
-
 .search-container {
   position: relative;
   width: 760px;
   height: 40px;
-  background-color: #fff;
+  background-color: var(--input-bg);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -108,18 +145,17 @@ export default {
   font-size: 12px;
   line-height: 20px;
   outline: none;
+  background-color: transparent;
+  color: inherit;
   font-family: "Montserrat", sans-serif;
 }
-
-/* ICONS */
 
 .header-icons {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 }
 
-/* Envelope com badge */
 .icon-wrapper {
   position: relative;
 }
@@ -146,11 +182,24 @@ export default {
   font-weight: bold;
 }
 
-/* Avatar */
 .avatar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   border: 2px solid #dcdcdc;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 4px;
+  transition: transform 0.2s ease;
+  color: inherit;
+}
+
+.toggle-btn:hover {
+  transform: scale(1.2);
 }
 </style>

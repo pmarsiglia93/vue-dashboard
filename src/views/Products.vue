@@ -1,6 +1,6 @@
 <template>
-  <div class="layout">
-    <Header />
+  <div class="layout" :class="{ 'dark-mode': isDarkMode }">
+    <Header @toggle-dark="toggleTheme" />
 
     <div class="main-section">
       <Sidebar />
@@ -19,6 +19,23 @@ export default {
     Sidebar,
     Header,
     MainContent,
+  },
+  data() {
+    return {
+      isDarkMode: false,
+    };
+  },
+  methods: {
+    toggleTheme() {
+      this.isDarkMode = !this.isDarkMode;
+
+      // Aplica a classe no body para propagar os estilos globais
+      if (this.isDarkMode) {
+        document.body.classList.add("dark-mode");
+      } else {
+        document.body.classList.remove("dark-mode");
+      }
+    },
   },
 };
 </script>

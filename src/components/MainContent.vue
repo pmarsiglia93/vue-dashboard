@@ -3,8 +3,8 @@
     <div class="top-bar">
       <div class="entries-filter">
         <div class="pagination-controls">
-          <label
-            >Show
+          <label>
+            Show
             <select v-model.number="entriesPerPage">
               <option
                 v-for="option in [5, 10, 15]"
@@ -124,8 +124,9 @@ export default {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: #f9f9f9;
+  background-color: var(--bg-color);
   min-height: 100vh;
+  color: var(--text-color);
 }
 
 .top-bar {
@@ -137,7 +138,7 @@ export default {
 
 .entries-filter label {
   font-size: 14px;
-  color: #444;
+  color: var(--text-color);
 }
 
 .entries-filter select {
@@ -145,6 +146,8 @@ export default {
   padding: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
+  background-color: var(--input-bg);
+  color: var(--text-color);
 }
 
 .top-bar button {

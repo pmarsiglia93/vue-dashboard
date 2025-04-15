@@ -27,18 +27,39 @@
             </span>
           </td>
           <td class="action-cell">
-            <img
-              src="https://img.icons8.com/?size=100&id=49&format=png&color=000000"
-              alt="Edit"
+            <!-- Edit Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="action-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               @click="$emit('edit', product)"
-            />
-            <img
-              src="https://img.icons8.com/?size=100&id=67884&format=png&color=FA5252"
-              alt="Delete"
+            >
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5l4 4L7 21H3v-4L16.5 3.5z" />
+            </svg>
+
+            <!-- Delete Icon -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
               class="action-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               @click="$emit('delete', product.id)"
-            />
+            >
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6l-2 14H7L5 6" />
+              <path d="M10 11v6" />
+              <path d="M14 11v6" />
+            </svg>
           </td>
         </tr>
       </tbody>
@@ -124,16 +145,9 @@ export default {
   max-width: 100%;
   overflow-x: auto;
   padding: 16px;
-  background-color: #fff;
+  background-color: var(--bg-color);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-.pagination-controls {
-  display: flex;
-  justify-content: flex-start;
-  margin-bottom: 12px;
-  font-size: 14px;
 }
 
 .pagination {
@@ -159,24 +173,29 @@ export default {
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
+  background-color: var(--header-bg);
   border-radius: 8px;
   overflow: hidden;
   font-size: 14px;
 }
 
 thead {
-  background-color: #f0f0f0;
+  background-color: var(--input-bg);
 }
 
 th,
 td {
   padding: 12px;
   text-align: left;
+  color: var(--text-color);
 }
 
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.06);
 }
 
 .status {
@@ -214,6 +233,7 @@ tr:nth-child(even) {
   height: 18px;
   cursor: pointer;
   transition: transform 0.2s ease;
+  stroke: var(--text-color);
 }
 
 .action-icon:hover {

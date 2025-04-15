@@ -64,13 +64,13 @@
 .sidebar {
   width: 220px;
   height: 100vh;
-  background-color: #f7f6fc;
+  background-color: var(--sidebar-bg, #f7f6fc);
   padding: 24px 0;
   display: flex;
   flex-direction: column;
   font-family: "Segoe UI", sans-serif;
   font-size: 14px;
-  color: #3c3c3c;
+  color: var(--text-color);
 }
 
 ul {
@@ -90,7 +90,7 @@ ul {
 }
 
 .menu-item:hover {
-  background-color: #e6e4f1;
+  background-color: var(--hover-bg, #e6e4f1);
 }
 
 .menu-item .icon {
@@ -101,15 +101,15 @@ ul {
 
 .section-title {
   font-size: 11px;
-  color: #b0b0b0;
+  color: var(--sidebar-section-color, #b0b0b0);
   text-transform: uppercase;
   margin: 24px 0 6px 24px;
   letter-spacing: 0.8px;
 }
 
 .tag-new {
-  background-color: #e1dbfc;
-  color: #4232a1;
+  background-color: var(--tag-bg, #e1dbfc);
+  color: var(--tag-text, #4232a1);
   font-size: 10px;
   padding: 2px 6px;
   border-radius: 8px;
@@ -130,6 +130,5 @@ ul {
 .bottom-section {
   margin-top: auto;
   padding-top: 24px;
-  border-top: 1px solid #e0e0e0;
 }
 </style>
