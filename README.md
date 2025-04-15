@@ -51,16 +51,6 @@
 
 ---
 
-## 📌 Melhorias Futuras
-
-- Filtro e busca por cliente/produto
-- Integração com autenticação
-- Exportação de relatórios
-- Gráficos de visualização
-- Internacionalização (i18n)
-
----
-
 ## 👨‍💻 Autor
 
 Feito com 💜 por [**Paulo Francisco Marsiglia**](https://www.linkedin.com/in/paulo-marsiglia/)
