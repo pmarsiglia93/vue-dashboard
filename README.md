@@ -1,21 +1,58 @@
-# vue-dashboard
+📊 ClarityUI - Vue Dashboard
 
-> A Vue.js project
+Este é um projeto de dashboard responsivo construído com Vue.js, utilizando boas práticas de componentização, estilização com CSS customizado, e funcionalidades como CRUD com modal, modo dark/light, sidebar responsiva, paginação, e consumo de API fake com JSON Server.
 
-## Build Setup
+🚀 Tecnologias Utilizadas
 
-``` bash
-# install dependencies
+Vue.js 2.x
+
+Vue Router
+
+JSON Server
+
+CSS Custom Properties
+
+🧩 Funcionalidades
+
+⚙️ Como rodar o projeto
+
+1. Clonar o repositório
+
+git clone https://github.com/seu-usuario/vue-dashboard.git
+cd vue-dashboard
+
+2. Instalar dependências
+
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+3. Rodar a aplicação Vue
 
-# build for production with minification
-npm run build
+npm start
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+4. Rodar o servidor JSON Server
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+npm run serve-api
+
+A API será executada em: http://localhost:3000
+
+A aplicação Vue será executada em: http://localhost:8080
+
+🔧 Scripts Disponíveis
+
+Comando
+
+Descrição
+
+npm start
+
+Inicia a aplicação Vue
+
+npm run serve-api
+
+Inicia o JSON Server com db.json
+
+📌 Melhorias Futuras
+
+🧑‍💻 Autor
+
+Feito com por Paulo Francisco Marsiglia . Entre em contato:
