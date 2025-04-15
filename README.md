@@ -30,8 +30,7 @@
 
 ### 🔽 Clonando o repositório e iniciando localmente:
 
-git clone 
-- https://github.com/pmarsiglia93/vue-dashboard.git 
+- git clone https://github.com/pmarsiglia93/vue-dashboard.git 
 - cd vue-dashboard 
 - npm install 
 - npm start 
