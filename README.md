@@ -1,68 +1,50 @@
 # 📊 ClarityUI - Vue Dashboard
 
-Este é um projeto de dashboard responsivo construído com **Vue.js**, utilizando boas práticas de componentização, estilização com CSS customizado e funcionalidades como:
-
-- CRUD com modal
-- Modo dark/light
-- Sidebar responsiva
-- Paginação
-- Consumo de API fake com JSON Server
+**ClarityUI** é um painel administrativo moderno e responsivo desenvolvido com **Vue.js 2**, utilizando **JSON Server** para simular uma API. O projeto implementa boas práticas de componentização, organização de layout, responsividade e modo dark/light.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
 
-- Vue.js 2.x  
-- Vue Router  
-- JSON Server  
-- CSS Custom Properties (variáveis CSS)
+- [Vue.js 2.x](https://vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [JSON Server](https://github.com/typicode/json-server)
+- CSS com variáveis (`custom properties`)
+- SVG Icons
 
 ---
 
-## 🧩 Funcionalidades
+## 🎯 Funcionalidades
 
-- ✅ Listagem paginada de produtos  
-- ✅ Criação, edição e exclusão via modais  
-- ✅ Feedback com toast notifications  
-- ✅ Suporte a tema claro/escuro  
-- ✅ Interface adaptável para mobile e desktop  
-- ✅ Sidebar colapsável com menu hamburguer  
+- ✅ CRUD completo de pedidos com modal (Create, Read, Update, Delete)
+- ✅ Paginação de registros
+- ✅ Modo claro/escuro (dark/light)
+- ✅ Responsividade total (mobile/desktop)
+- ✅ Sidebar dinâmica com menu hambúrguer
+- ✅ Notificações de feedback via toast
+- ✅ Validação de formulários
+- ✅ Imagens por produto integradas
 
 ---
 
-## ⚙️ Como rodar o projeto
+## ⚙️ Como Rodar o Projeto
+
+### 1. Clone o repositório
 
 ```bash
-# 1. Clonar o repositório
 git clone https://github.com/pmarsiglia93/vue-dashboard.git
 cd vue-dashboard
 
-# 2. Instalar dependências
+### 2. Instale as dependências
+
+```bash
 npm install
 
-# 3. Rodar a aplicação Vue
+### 3. Inicie a aplicação Vue
 npm start
 
-# 4. Rodar o servidor JSON Server
+### 4. Inicie o JSON Server (API fake)
 npm run serve-api
 
-A aplicação Vue será executada em: http://localhost:8080
-
-A API será executada em: http://localhost:3000
-
-🔧 Scripts Disponíveis
-
-Comando	Descrição
-npm start	Inicia a aplicação Vue
-npm run serve-api	Inicia o JSON Server com db.json
-📌 Melhorias Futuras
-🔍 Filtro por busca
-
-📥 Exportação de dados (CSV, PDF)
-
-🔐 Autenticação e rotas protegidas
-
-📱 Acessibilidade aprimorada
-
-🧑‍💻 Autor
-Feito com ❤️ por Paulo Francisco Marsiglia
+## 👨‍💻 Autor
+Feito por Paulo Francisco Marsiglia
