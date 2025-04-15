@@ -1,5 +1,7 @@
 <template>
   <div class="main-content">
+    <Toast v-if="toastMessage" :message="toastMessage" />
+
     <div class="top-bar">
       <div class="entries-filter">
         <div class="pagination-controls">
@@ -49,6 +51,7 @@
 import ProductTable from "./ProductTable.vue";
 import ProductModal from "./ProductModal.vue";
 import DeleteModal from "./DeleteModal.vue";
+import Toast from "./Toast.vue";
 import api from "@/services/api";
 
 export default {
@@ -56,6 +59,7 @@ export default {
     ProductTable,
     ProductModal,
     DeleteModal,
+    Toast,
   },
   data() {
     return {
@@ -64,6 +68,7 @@ export default {
       productToEdit: null,
       productToDeleteId: null,
       entriesPerPage: 10,
+      toastMessage: "",
     };
   },
   methods: {
@@ -90,11 +95,13 @@ export default {
             trackingId: this.productToEdit.trackingId,
             ...data,
           });
+          this.showToast("Produto atualizado com sucesso!");
         } else {
           await api.post("/products", {
             trackingId: "#" + Math.floor(Math.random() * 90000 + 10000),
             ...data,
           });
+          this.showToast("Produto adicionado com sucesso!");
         }
 
         this.productToEdit = null;
@@ -102,6 +109,7 @@ export default {
         this.$refs.productTable.fetchProducts();
       } catch (error) {
         console.error("Erro ao salvar:", error);
+        this.showToast("Erro ao salvar o produto.");
       }
     },
     async deleteProduct() {
@@ -110,9 +118,17 @@ export default {
         this.$refs.productTable.fetchProducts();
         this.showDeleteModal = false;
         this.productToDeleteId = null;
+        this.showToast("Produto deletado com sucesso!");
       } catch (error) {
         console.error("Erro ao deletar:", error);
+        this.showToast("Erro ao deletar o produto.");
       }
+    },
+    showToast(message) {
+      this.toastMessage = message;
+      setTimeout(() => {
+        this.toastMessage = "";
+      }, 3000);
     },
   },
 };
@@ -126,7 +142,6 @@ export default {
   flex-direction: column;
   background-color: var(--bg-color);
   min-height: 100vh;
-  color: var(--text-color);
 }
 
 .top-bar {
@@ -146,8 +161,6 @@ export default {
   padding: 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
-  background-color: var(--input-bg);
-  color: var(--text-color);
 }
 
 .top-bar button {
