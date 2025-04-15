@@ -1,34 +1,14 @@
 {
   "products": [
     {
-      "trackingId": "#83268",
-      "id": "3168",
-      "status": "Cancelled",
-      "product": "teste",
-      "customer": "teste",
-      "date": "2020-10-20",
-      "amount": "50",
-      "payment": "pix"
-    },
-    {
-      "trackingId": "#34595",
-      "id": "1a94",
-      "status": "Process",
-      "product": "Shoes",
-      "customer": "Paulo",
-      "date": "1993-09-23",
-      "amount": "300",
-      "payment": "Transfer Bank"
-    },
-    {
       "trackingId": "#38523",
       "id": "7b31",
       "status": "Cancelled",
       "product": "test",
       "customer": "test",
-      "date": "1010-10-10",
-      "amount": "10",
-      "payment": "test"
+      "date": "2020-10-20",
+      "amount": "3.061",
+      "payment": "Transfer Bank"
     },
     {
       "id": "eba3",
@@ -91,44 +71,74 @@
       "payment": "Pix"
     },
     {
-      "id": "663e",
       "trackingId": "#72182",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
+      "id": "663e",
+      "status": "Delivered",
+      "product": "Hat",
+      "customer": "Mark Grayson",
+      "date": "20/10/2020",
+      "amount": "150",
+      "payment": "Transfer Bank"
     },
     {
-      "id": "8c8a",
-      "trackingId": "#38313",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
-    },
-    {
-      "id": "2191",
       "trackingId": "#14654",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
+      "id": "2191",
+      "status": "Delivered",
+      "product": "Phone",
+      "customer": "Paulo",
+      "date": "20202020",
+      "amount": "50",
+      "payment": "Transfer Bank"
     },
     {
-      "id": "d2d4",
-      "trackingId": "#96720",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
+      "id": "b2d3",
+      "trackingId": "#62464",
+      "status": "Delivered",
+      "product": "Hat",
+      "customer": "Paulo",
+      "date": "20/10/2023",
+      "amount": "50",
+      "payment": "Transfer Bank"
+    },
+    {
+      "id": "3870",
+      "trackingId": "#73771",
+      "status": "Delivered",
+      "product": "Bag",
+      "customer": "Mark",
+      "date": "20/10/1993",
+      "amount": "1500",
+      "payment": "Cash on Delivery"
+    },
+    {
+      "trackingId": "#81967",
+      "id": "392a",
+      "status": "Delivered",
+      "product": "Phone",
+      "customer": "Paulo",
+      "date": "2020-10-20",
+      "amount": "500.00",
+      "payment": "Transfer Bank"
+    },
+    {
+      "id": "13cb",
+      "trackingId": "#64044",
+      "status": "Delivered",
+      "product": "Phone",
+      "customer": "Paulo",
+      "date": "2023-10-23",
+      "amount": "$500.00",
+      "payment": "Transfer Bank"
+    },
+    {
+      "id": "5ba6",
+      "trackingId": "#88857",
+      "status": "Cancelled",
+      "product": "Laptop",
+      "customer": "Ezequiel",
+      "date": "2023-02-10",
+      "amount": "$500.00",
+      "payment": "Transfer Bank"
     }
   ]
 }

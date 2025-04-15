@@ -1,7 +1,7 @@
 <template>
   <div class="modal-overlay" @click.self="close">
     <div class="modal">
-      <h2>{{ isEdit ? 'Edit Order' : 'Add Order' }}</h2>
+      <h2>{{ isEdit ? "Edit Order" : "Add Order" }}</h2>
 
       <form @submit.prevent="submitForm">
         <label>Status:</label>
@@ -12,23 +12,44 @@
         </select>
 
         <label>Product:</label>
-        <input v-model="form.product" type="text" />
+        <select v-model="form.product">
+          <option v-for="item in productOptions" :key="item" :value="item">
+            {{ item }}
+          </option>
+        </select>
 
         <label>Customer:</label>
         <input v-model="form.customer" type="text" />
 
-        <label>Date:</label>
-        <input v-model="form.date" type="date" />
-
-        <label>Amount:</label>
-        <input v-model="form.amount" type="text" />
+        <div class="input-group">
+          <div>
+            <label>Date:</label>
+            <input v-model="form.date" type="date" />
+          </div>
+          <div>
+            <label>Amount:</label>
+            <input
+              v-model="form.amount"
+              type="text"
+              @blur="formatAmount"
+              placeholder="$0.00"
+            />
+          </div>
+        </div>
 
         <label>Payment Mode:</label>
-        <input v-model="form.payment" type="text" />
+        <select v-model="form.payment">
+          <option>Transfer Bank</option>
+          <option>Cash on Delivery</option>
+        </select>
 
         <div class="modal-actions">
-          <button type="button" @click="close">Cancel</button>
-          <button type="submit">{{ isEdit ? 'Save Changes' : 'Apply' }}</button>
+          <button type="button" class="cancel-btn" @click="close">
+            Cancel
+          </button>
+          <button type="submit" class="apply-btn">
+            {{ isEdit ? "Save Changes" : "Apply" }}
+          </button>
         </div>
       </form>
     </div>
@@ -37,38 +58,60 @@
 
 <script>
 export default {
-  name: 'ProductModal',
+  name: "ProductModal",
   props: {
     isEdit: Boolean,
-    data: Object
+    data: Object,
   },
-  data () {
+  data() {
     return {
+      productOptions: [
+        "Hat",
+        "Laptop",
+        "Phone",
+        "Bag",
+        "Headset",
+        "Mouse",
+        "Clock",
+        "T-shirt",
+        "Monitor",
+        "Keyboard",
+      ],
       form: {
-        status: '',
-        product: '',
-        customer: '',
-        date: '',
-        amount: '',
-        payment: ''
-      }
-    }
+        status: "",
+        product: "",
+        customer: "",
+        date: "",
+        amount: "",
+        payment: "",
+      },
+    };
   },
-  created () {
+  created() {
     if (this.data) {
-      this.form = { ...this.data }
+      this.form = { ...this.data };
     }
   },
   methods: {
-    close () {
-      this.$emit('close')
+    close() {
+      this.$emit("close");
     },
-    submitForm () {
-      this.$emit('submit', this.form)
-      this.close()
-    }
-  }
-}
+    submitForm() {
+      this.$emit("submit", this.form);
+      this.close();
+    },
+    formatAmount() {
+      const value = this.form.amount.replace(/[^\d.]/g, "");
+      const num = parseFloat(value);
+      if (!isNaN(num)) {
+        this.form.amount = num.toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        });
+      }
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -86,12 +129,19 @@ export default {
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--table-bg);
   padding: 24px;
   border-radius: 12px;
-  width: 400px;
+  width: 460px;
   max-width: 90%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 form {
@@ -102,35 +152,57 @@ form {
 label {
   margin-top: 12px;
   margin-bottom: 4px;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-color);
 }
 
 input,
 select {
+  height: 38px;
   padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 14px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.input-group > div {
+  flex: 1;
 }
 
 .modal-actions {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
-.modal-actions button {
+.cancel-btn {
   padding: 10px 16px;
-  border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: #333;
   cursor: pointer;
 }
 
-.modal-actions button:first-child {
-  background: #eee;
-}
-
-.modal-actions button:last-child {
-  background: #6a5acd;
+.apply-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #6a5acd;
   color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 </style>
