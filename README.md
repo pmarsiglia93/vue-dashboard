@@ -30,10 +30,16 @@
 
 ### 🔽 Clonando o repositório e iniciando localmente:
 
-git clone https://github.com/pmarsiglia93/vue-dashboard.git 
+git clone 
+```bash
+https://github.com/pmarsiglia93/vue-dashboard.git 
+```bash
 cd vue-dashboard 
+```bash
 npm install 
+```bash
 npm start 
+```bash
 npm run serve-api
 
 
