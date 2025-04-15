@@ -45,3 +45,24 @@ npm start
 
 # 4. Rodar o servidor JSON Server
 npm run serve-api
+
+A aplicação Vue será executada em: http://localhost:8080
+
+A API será executada em: http://localhost:3000
+
+🔧 Scripts Disponíveis
+
+Comando	Descrição
+npm start	Inicia a aplicação Vue
+npm run serve-api	Inicia o JSON Server com db.json
+📌 Melhorias Futuras
+🔍 Filtro por busca
+
+📥 Exportação de dados (CSV, PDF)
+
+🔐 Autenticação e rotas protegidas
+
+📱 Acessibilidade aprimorada
+
+🧑‍💻 Autor
+Feito com ❤️ por Paulo Francisco Marsiglia
