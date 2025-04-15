@@ -33,6 +33,7 @@
 - git clone https://github.com/pmarsiglia93/vue-dashboard.git 
 - cd vue-dashboard 
 - npm install 
+- Rode em dois terminais separados dentro do vs code:
 - npm start 
 - npm run serve-api
 
