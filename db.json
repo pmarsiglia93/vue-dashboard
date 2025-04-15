@@ -81,16 +81,6 @@
       "payment": "PIx"
     },
     {
-      "id": "21d1",
-      "trackingId": "#73603",
-      "status": "Cancelled",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
-    },
-    {
       "trackingId": "#26569",
       "id": "1492",
       "status": "Cancelled",
@@ -99,26 +89,6 @@
       "date": "2020-02-20",
       "amount": "20",
       "payment": "Pix"
-    },
-    {
-      "id": "b6cc",
-      "trackingId": "#84335",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
-    },
-    {
-      "id": "c564",
-      "trackingId": "#45609",
-      "status": "",
-      "product": "",
-      "customer": "",
-      "date": "",
-      "amount": "",
-      "payment": ""
     }
   ]
 }
