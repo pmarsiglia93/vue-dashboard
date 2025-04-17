@@ -36,6 +36,7 @@
 - Rode em dois terminais separados dentro do vs code:
 - npm start 
 - npm run serve-api
+- para passar pela pagina de login é preciso entrar com admin no email e na senha.
 
 
 - Acesse o app em: **http://localhost:8080**
